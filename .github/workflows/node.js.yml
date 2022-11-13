@@ -24,9 +24,10 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        TOKEN: ${{secrets.TOKEN}}
-        CLIENTID: ${{secrets.CLIENTID}}
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+        CLIENTID: ${{secrets.CLIENTID}}
     - run: npm run build
