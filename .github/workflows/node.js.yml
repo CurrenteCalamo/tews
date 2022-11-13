@@ -31,3 +31,6 @@ jobs:
         TOKEN: ${{ secrets.TOKEN }}
         CLIENTID: ${{secrets.CLIENTID}}
     - run: npm run build
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+        CLIENTID: ${{secrets.CLIENTID}}
